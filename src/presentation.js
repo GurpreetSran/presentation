@@ -63,7 +63,7 @@ export default class Presentation extends React.Component {
           </BaseSlide>
           <BaseSlide>
             <BlockQuote>
-              <Quote>Example Quote</Quote>
+              <Quote style={{ color: '#000' }}>Example Quote</Quote>
               <Cite>Author</Cite>
             </BlockQuote>
           </BaseSlide>
