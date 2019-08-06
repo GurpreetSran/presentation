@@ -1,12 +1,35 @@
 export const data = [
-  { genre: 'Sports', sold: 275, income: 2300 },
-  { genre: 'Strategy', sold: 115, income: 667 },
-  { genre: 'Action', sold: 120, income: 982 },
-  { genre: 'Shooter', sold: 350, income: 5271 },
-  { genre: 'Other', sold: 150, income: 3710 }
+  {
+    name: 'London',
+    'Jan.': 18.9,
+    'Feb.': 28.8,
+    'Mar.': 39.3,
+    'Apr.': 81.4,
+    May: 47,
+    'Jun.': 20.3,
+    'Jul.': 24,
+    'Aug.': 35.6
+  },
+  {
+    name: 'Paris',
+    'Jan.': 18.9,
+    'Feb.': 28.8,
+    'Mar.': 39.3,
+    'Apr.': 81.4,
+    May: 47,
+    'Jun.': 20.3,
+    'Jul.': 24,
+    'Aug.': 35.6
+  },
+  {
+    name: 'Berlin',
+    'Jan.': 12.4,
+    'Feb.': 23.2,
+    'Mar.': 34.5,
+    'Apr.': 99.7,
+    May: 52.6,
+    'Jun.': 35.5,
+    'Jul.': 37.4,
+    'Aug.': 42.4
+  }
 ];
-
-export const cols = {
-  sold: { alias: 'Label X' },
-  genre: { alias: 'Label Y' }
-};

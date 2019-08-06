@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@antv/data-set": "^0.10.2",
     "antd": "^3.21.1",
     "bizcharts": "^3.5.5",
     "gh-pages": "2.0",
