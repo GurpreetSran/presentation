@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.21.1",
+    "bizcharts": "^3.5.5",
     "react": "^16.8.6",
+    "react-data-table-component": "^3.0.4",
     "react-dom": "^16.8.6",
-    "spectacle-scripts": "2.4.0"
+    "spectacle-scripts": "2.4.0",
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
