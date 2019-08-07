@@ -1,9 +1,16 @@
 .headerWrapper {
   display: flex;
   justify-content: center;
+  background-color: #000;
 }
 
 .header {
   position: absolute;
-  top: 5px;
+  top: 10px;
+  left: 20px;
+}
+
+.header img {
+  width: 40px;
+  margin: 0 5px;
 }

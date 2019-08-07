@@ -1,9 +1,12 @@
 import React from 'react';
-import logo from './logo.png';
+import logo from './inca-icon.svg';
 
 const Header = () => (
   <div className="headerWrapper">
-    <img className="header" alt="Logo" src={logo} />
+    <div className="header">
+      <img alt="Logo" src={logo} />
+      INCA
+    </div>
   </div>
 );
 
