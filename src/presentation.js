@@ -9,17 +9,7 @@ import '../src/styles.css';
 import 'antd/dist/antd.css';
 
 // Import Spectacle Core tags
-import {
-  BlockQuote,
-  Cite,
-  Deck,
-  Heading,
-  ListItem,
-  List,
-  Quote,
-  Slide,
-  Text
-} from 'spectacle';
+import { BlockQuote, Cite, Deck, Heading, Quote, Text } from 'spectacle';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
@@ -53,18 +43,26 @@ export default class Presentation extends React.Component {
           theme={theme}
         >
           <BaseSlide>
+            <Heading size="2">The Times </Heading>
+            <Heading size="5">Data Science</Heading>
+          </BaseSlide>
+          <BaseSlide>
+            <Heading size="6">Chart Title</Heading>
             <Chart />
           </BaseSlide>
           <BaseSlide>
             <Text size={6} textColor="secondary">
-              Table
+              <Heading size="6">Table Title</Heading>
             </Text>
             <Table />
           </BaseSlide>
           <BaseSlide>
             <BlockQuote>
-              <Quote style={{ color: '#000' }}>Example Quote</Quote>
-              <Cite>Author</Cite>
+              <Quote style={{ color: '#000' }}>
+                Big data is at the foundation of all the megatrends that are
+                happening.
+              </Quote>
+              <Cite>Chris Lynch</Cite>
             </BlockQuote>
           </BaseSlide>
         </Deck>
