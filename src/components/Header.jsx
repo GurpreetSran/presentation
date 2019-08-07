@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './inca-icon.svg';
+import logo from '../assets/inca-icon.svg';
 
 const Header = () => (
   <div className="headerWrapper">

@@ -15,6 +15,8 @@ import { BlockQuote, Cite, Deck, Heading, Quote, Text } from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
 import BaseSlide from './components/Slide';
 
+import bulb from './assets/creative.svg';
+
 // Require CSS
 require('normalize.css');
 
@@ -43,8 +45,14 @@ export default class Presentation extends React.Component {
           theme={theme}
         >
           <BaseSlide>
-            <Heading size="2">The Times </Heading>
-            <Heading size="5">Data Science</Heading>
+            <div className="didyouknow">
+              <img alt="" src={bulb} width="100px" />
+              <Heading size="3">Did you know?</Heading>
+            </div>
+            <Heading size="6">
+              Content to follow...Content to follow...Content to follow..Content
+              to follow
+            </Heading>
           </BaseSlide>
           <BaseSlide>
             <Heading size="6">Chart Title</Heading>

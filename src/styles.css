@@ -14,3 +14,14 @@
   width: 40px;
   margin: 0 5px;
 }
+
+.didyouknow {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.didyouknow h3 {
+  margin: none;
+  margin-top: 30px;
+  margin-left: 10px;
+}
