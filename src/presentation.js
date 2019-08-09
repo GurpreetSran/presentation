@@ -45,11 +45,11 @@ export default class Presentation extends React.Component {
         <Deck
           controls={false}
           autoplay={true}
+          autoplayDuration={10000}
           showFullscreenControl={true}
           transition={['zoom']}
           theme={theme}
           contentWidth="90%"
-          transitionDuration={1000}
         >
           <BaseSlide>
             <div className="didyouknow">
