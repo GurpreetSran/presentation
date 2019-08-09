@@ -43,10 +43,12 @@ export default class Presentation extends React.Component {
     return (
       <div>
         <Deck
+          controls={false}
           autoplay={true}
           showFullscreenControl={true}
           transition={['zoom']}
           theme={theme}
+          contentWidth="90%"
           transitionDuration={1000}
         >
           <BaseSlide>
@@ -63,17 +65,17 @@ export default class Presentation extends React.Component {
             </Heading>
           </BaseSlide>
           <BaseSlide>
-            <Heading size={6}>Dwell Time Index - Uniques</Heading>
+            <Heading size={4}>Dwell Time Index - Uniques</Heading>
             <br />
             <Table data={table1data} columns={table1columns} />
           </BaseSlide>
           <BaseSlide>
-            <Heading size={6}>Dwell Time Index - Today</Heading>
+            <Heading size={4}>Dwell Time Index - Today</Heading>
             <br />
             <Table data={table2data} columns={table2columns} />
           </BaseSlide>
           <BaseSlide>
-            <Heading size={6}>Google Web Traffic - Weekly</Heading>
+            <Heading size={4}>Google Web Traffic - Weekly</Heading>
             <br />
             <Chart />
           </BaseSlide>

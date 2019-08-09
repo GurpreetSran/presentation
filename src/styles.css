@@ -16,6 +16,7 @@
 
 .didyouknow {
   display: flex;
+  justify-content: center;
   margin-bottom: 30px;
 }
 
@@ -36,11 +37,11 @@ h3 {
 }
 
 .rdt_TableCol_Sortable {
-  font-size: 24px !important;
+  font-size: 34px !important;
 }
 
 .react-data-table--cell-content {
-  font-size: 22px !important;
+  font-size: 30px !important;
 }
 
 .rdt_TableHeader {
