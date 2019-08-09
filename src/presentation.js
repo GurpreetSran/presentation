@@ -22,14 +22,14 @@ require('normalize.css');
 
 const theme = createTheme(
   {
-    primary: 'white',
-    secondary: '#1F2022',
-    tertiary: '#03A9FC',
-    quaternary: '#CECECE'
+    primary: '#1A374C',
+    secondary: 'white',
+    tertiary: 'white',
+    quaternary: 'white'
   },
   {
-    primary: 'Montserrat',
-    secondary: 'Helvetica'
+    primary: 'Roboto',
+    secondary: 'sans-serif'
   }
 );
 
@@ -47,31 +47,31 @@ export default class Presentation extends React.Component {
           <BaseSlide>
             <div className="didyouknow">
               <img alt="" src={bulb} width="100px" />
-              <Heading size="3">Did you know?</Heading>
+              <br />
+              <br />
+              <Heading className="didyouknow" size="4">
+                Did you know?
+              </Heading>
             </div>
-            <Heading size="6">
-              Content to follow...Content to follow...Content to follow..Content
-              to follow
+            <Heading size="3">
+              We now have over 300,000 digital only subscribers.
             </Heading>
           </BaseSlide>
           <BaseSlide>
-            <Heading size="6">Chart Title</Heading>
-            <Chart />
-          </BaseSlide>
-          <BaseSlide>
             <Text size={6} textColor="secondary">
-              <Heading size="6">Table Title</Heading>
+              <Heading size={6}>Dwell Time Index - Uniques</Heading>
             </Text>
             <Table />
           </BaseSlide>
           <BaseSlide>
-            <BlockQuote>
-              <Quote style={{ color: '#000' }}>
-                Big data is at the foundation of all the megatrends that are
-                happening.
-              </Quote>
-              <Cite>Chris Lynch</Cite>
-            </BlockQuote>
+            <Text size={6} textColor="secondary">
+              <Heading size={6}>Dwell Time Index - Today</Heading>
+            </Text>
+            <Table />
+          </BaseSlide>
+          <BaseSlide>
+            <Heading size={6}>Google web traffic</Heading>
+            <Chart />
           </BaseSlide>
         </Deck>
       </div>

@@ -16,7 +16,24 @@ dv.transform({
 
 const BaseChart = () => (
   <div>
-    <Chart height={400} data={dv} forceFit>
+    <Chart data={dv}>
+      <Axis name="x" />
+      <Axis name="y" />
+      <Tooltip
+        crosshairs={{ type: 'line' }}
+        g2-tooltip={{
+          marginTop: '-75px',
+          marginLeft: '-25px',
+          color: 'white',
+          backgroundColor: '#283c4f',
+          border: 'none',
+          boxShadow: 'none'
+        }}
+      />
+      <Geom size={4} type="interval" position="months*performance" />
+    </Chart>
+
+    {/* <Chart height={400} data={dv} forceFit>
       <Axis />
       <Axis />
       <Legend />
@@ -41,7 +58,7 @@ const BaseChart = () => (
           formatter={val => Number(val).toFixed(0)}
         />
       </Geom>
-    </Chart>
+    </Chart> */}
   </div>
 );
 
