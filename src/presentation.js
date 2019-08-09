@@ -7,7 +7,7 @@ import Table from './components/DataTable';
 import '../src/styles.css';
 import 'antd/dist/antd.css';
 
-import { Deck, Heading, Text } from 'spectacle';
+import { Deck, Heading } from 'spectacle';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';

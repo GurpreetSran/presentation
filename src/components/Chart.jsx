@@ -63,7 +63,7 @@ const BaseChart = () => (
           boxShadow: 'none'
         }}
       />
-      <Geom size={4} type="interval" position="week*views" />
+      <Geom size={15} type="interval" position="week*views" />
     </Chart>
     {/* <Chart height={400} data={dv} forceFit>
       <Axis />
