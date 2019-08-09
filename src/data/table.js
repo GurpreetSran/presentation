@@ -42,7 +42,7 @@
 
 */
 
-export const data = [
+export const table1data = [
   {
     id: '98458d2e-b39f-11e9-b26a-caceaf2bf014',
     title: 'Richard Holbrooke and the End of the American Century',
@@ -72,7 +72,7 @@ export const data = [
   }
 ];
 
-export const columns = [
+export const table1columns = [
   {
     name: 'Headline',
     selector: 'title',
@@ -85,6 +85,38 @@ export const columns = [
     sortable: true,
     right: true,
     grow: 1
+  }
+];
+
+export const table2columns = [
+  {
+    name: 'Headline',
+    selector: 'title',
+    sortable: false
+  }
+];
+
+export const table2data = [
+  {
+    id: 'dbd8c4ea-b95b-11e9-9ed1-57176c9fe03e',
+    title:
+      'Frank Lampard puts faith in bouncy castles and an iron will at Chelsea'
+  },
+  {
+    id: '25359260-b94f-11e9-9ed1-57176c9fe03e',
+    title: 'Muddy Waters criticises Burford Capital: the report unspun'
+  },
+  {
+    id: '2a528a58-b95b-11e9-bfc4-f5ff1f47234e',
+    title: 'Conman Mark Acklom: Kid Con and his lifetime of lying'
+  },
+  {
+    id: 'ef8211fa-b964-11e9-9ed1-57176c9fe03e',
+    title: 'Ahir Shah review — Lack of ideas allows for more fun'
+  },
+  {
+    id: 'dd76ff42-b93d-11e9-bfc4-f5ff1f47234e',
+    title: 'Ahir Shah review — Lack of ideas allows for more fun'
   }
 ];
 

@@ -35,10 +35,10 @@ h3 {
   color: white !important;
 }
 
-.react-data-table--cell-content {
-  font-size: 18px;
+.rdt_TableCol_Sortable {
+  font-size: 24px;
 }
 
-.rdt_TableCol_Sortable {
-  font-size: 20px;
+.react-data-table--cell-content {
+  font-size: 22px;
 }

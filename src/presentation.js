@@ -4,18 +4,23 @@ import React from 'react';
 import Chart from './components/Chart';
 import Table from './components/DataTable';
 
-// import { DatePicker } from 'antd';
 import '../src/styles.css';
 import 'antd/dist/antd.css';
 
-// Import Spectacle Core tags
-import { BlockQuote, Cite, Deck, Heading, Quote, Text } from 'spectacle';
+import { Deck, Heading, Text } from 'spectacle';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
 import BaseSlide from './components/Slide';
 
 import bulb from './assets/creative.svg';
+
+import {
+  table1data,
+  table2data,
+  table1columns,
+  table2columns
+} from './data/table';
 
 // Require CSS
 require('normalize.css');
@@ -39,9 +44,9 @@ export default class Presentation extends React.Component {
       <div>
         <Deck
           showFullscreenControl="true"
-          // autoplay="true"
+          autoplay="true"
           transition={['zoom']}
-          // transitionDuration={500}
+          transitionDuration={500}
           theme={theme}
         >
           <BaseSlide>
@@ -61,16 +66,16 @@ export default class Presentation extends React.Component {
             <Text size={6} textColor="secondary">
               <Heading size={6}>Dwell Time Index - Uniques</Heading>
             </Text>
-            <Table />
+            <Table data={table1data} columns={table1columns} />
           </BaseSlide>
           <BaseSlide>
             <Text size={6} textColor="secondary">
               <Heading size={6}>Dwell Time Index - Today</Heading>
             </Text>
-            <Table />
+            <Table data={table2data} columns={table2columns} />
           </BaseSlide>
           <BaseSlide>
-            <Heading size={6}>Google web traffic</Heading>
+            <Heading size={6}>Google Web Traffic - Weekly</Heading>
             <Chart />
           </BaseSlide>
         </Deck>

@@ -1,35 +1,6 @@
 export const data = [
-  {
-    name: 'London',
-    'Jan.': 18.9,
-    'Feb.': 28.8,
-    'Mar.': 39.3,
-    'Apr.': 81.4,
-    May: 47,
-    'Jun.': 20.3,
-    'Jul.': 24,
-    'Aug.': 35.6
-  },
-  {
-    name: 'Paris',
-    'Jan.': 18.9,
-    'Feb.': 28.8,
-    'Mar.': 39.3,
-    'Apr.': 81.4,
-    May: 47,
-    'Jun.': 20.3,
-    'Jul.': 24,
-    'Aug.': 35.6
-  },
-  {
-    name: 'Berlin',
-    'Jan.': 12.4,
-    'Feb.': 23.2,
-    'Mar.': 34.5,
-    'Apr.': 99.7,
-    May: 52.6,
-    'Jun.': 35.5,
-    'Jul.': 37.4,
-    'Aug.': 42.4
-  }
+  { week: 'week 1', views: 1320611 },
+  { week: 'week 2', views: 1200985 },
+  { week: 'week 3', views: 1343893 },
+  { week: 'week 4', views: 1372527 }
 ];
