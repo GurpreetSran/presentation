@@ -20,9 +20,9 @@
 }
 
 .didyouknow h4 {
-  margin: none;
-  margin-top: 30px;
-  margin-left: 10px;
+  margin: 0 !important;
+  margin-top: 30px !important;
+  margin-left: 10px !important;
   color: white !important;
 }
 
@@ -36,9 +36,9 @@ h3 {
 }
 
 .rdt_TableCol_Sortable {
-  font-size: 24px;
+  font-size: 24px !important;
 }
 
 .react-data-table--cell-content {
-  font-size: 22px;
+  font-size: 22px !important;
 }

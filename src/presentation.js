@@ -43,8 +43,8 @@ export default class Presentation extends React.Component {
     return (
       <div>
         <Deck
-          showFullscreenControl="true"
-          autoplay="true"
+          showFullscreenControl={true}
+          autoplay={true}
           transition={['zoom']}
           transitionDuration={500}
           theme={theme}
@@ -54,11 +54,11 @@ export default class Presentation extends React.Component {
               <img alt="" src={bulb} width="100px" />
               <br />
               <br />
-              <Heading className="didyouknow" size="4">
+              <Heading className="didyouknow" size={4}>
                 Did you know?
               </Heading>
             </div>
-            <Heading size="3">
+            <Heading size={3}>
               We now have over 300,000 digital only subscribers.
             </Heading>
           </BaseSlide>
