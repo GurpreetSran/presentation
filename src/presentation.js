@@ -42,7 +42,13 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <div>
-        <Deck showFullscreenControl={true} transition={['zoom']} theme={theme}>
+        <Deck
+          autoplay={true}
+          showFullscreenControl={true}
+          transition={['zoom']}
+          theme={theme}
+          transitionDuration={1000}
+        >
           <BaseSlide>
             <div className="didyouknow">
               <img alt="" src={bulb} width="100px" />
