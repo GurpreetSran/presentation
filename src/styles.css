@@ -42,3 +42,7 @@ h3 {
 .react-data-table--cell-content {
   font-size: 22px !important;
 }
+
+.rdt_TableHeader {
+  display: none !important;
+}

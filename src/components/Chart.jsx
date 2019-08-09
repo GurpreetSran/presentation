@@ -39,7 +39,7 @@ const cols = {
 
 const BaseChart = () => (
   <div>
-    <Chart animate={false} data={data} scale={cols} forceFit>
+    <Chart animate={true} data={data} scale={cols} forceFit>
       <Axis
         name="week"
         label={{

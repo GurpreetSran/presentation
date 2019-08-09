@@ -42,13 +42,7 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <div>
-        <Deck
-          showFullscreenControl={true}
-          autoplay={true}
-          transition={['zoom']}
-          transitionDuration={500}
-          theme={theme}
-        >
+        <Deck showFullscreenControl={true} transition={['zoom']} theme={theme}>
           <BaseSlide>
             <div className="didyouknow">
               <img alt="" src={bulb} width="100px" />
@@ -63,19 +57,18 @@ export default class Presentation extends React.Component {
             </Heading>
           </BaseSlide>
           <BaseSlide>
-            <Text size={6} textColor="secondary">
-              <Heading size={6}>Dwell Time Index - Uniques</Heading>
-            </Text>
+            <Heading size={6}>Dwell Time Index - Uniques</Heading>
+            <br />
             <Table data={table1data} columns={table1columns} />
           </BaseSlide>
           <BaseSlide>
-            <Text size={6} textColor="secondary">
-              <Heading size={6}>Dwell Time Index - Today</Heading>
-            </Text>
+            <Heading size={6}>Dwell Time Index - Today</Heading>
+            <br />
             <Table data={table2data} columns={table2columns} />
           </BaseSlide>
           <BaseSlide>
             <Heading size={6}>Google Web Traffic - Weekly</Heading>
+            <br />
             <Chart />
           </BaseSlide>
         </Deck>
