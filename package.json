@@ -6,7 +6,6 @@
   "dependencies": {
     "@antv/data-set": "^0.10.2",
     "@apollo/react-hooks": "^3.0.0",
-    "antd": "^3.21.1",
     "apollo-boost": "^0.4.4",
     "bizcharts": "^3.5.5",
     "gh-pages": "2.0",
