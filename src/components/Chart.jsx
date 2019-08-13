@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { data } from '../data/chart';
-
 import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
 
 const cols = {
@@ -65,32 +63,6 @@ const BaseChart = () => (
       />
       <Geom size={15} type="interval" position="week*views" />
     </Chart>
-    {/* <Chart height={400} data={dv} forceFit>
-      <Axis />
-      <Axis />
-      <Legend />
-      <Tooltip
-        crosshairs={{
-          type: 'y'
-        }}
-      />
-      <Geom
-        type="interval"
-        position="months*performance"
-        color={'name'}
-        adjust={[
-          {
-            type: 'dodge',
-            marginRatio: 1 / 32
-          }
-        ]}
-      >
-        <Label
-          content="performance"
-          formatter={val => Number(val).toFixed(0)}
-        />
-      </Geom>
-    </Chart> */}
   </div>
 );
 
