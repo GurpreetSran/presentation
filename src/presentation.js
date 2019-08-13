@@ -68,14 +68,14 @@ const Presentation = () => {
           <Heading size={6}>
             Weekly Unique Visirors Referred from Google
           </Heading>
-          <Chart />
+          <Chart size={100} type="interval" />
         </BaseSlide>
         <BaseSlide>
           <Heading size={4}>Google Traffic</Heading>
           <Heading size={6}>
-            Weekly Unique Visirors Referred from Google
+            Weekly Unique Visitors Referred from Google
           </Heading>
-          <Chart />
+          <Chart size={5} type="line" />
         </BaseSlide>
       </Deck>
     </div>

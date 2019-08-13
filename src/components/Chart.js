@@ -35,9 +35,9 @@ const cols = {
   }
 };
 
-const BaseChart = () => (
+const BaseChart = props => (
   <div>
-    <Chart animate={true} data={data} scale={cols} forceFit>
+    <Chart animate={false} data={data} scale={cols} width={1800} forceFit>
       <Axis
         name="week"
         label={{
@@ -61,7 +61,7 @@ const BaseChart = () => (
           boxShadow: 'none'
         }}
       />
-      <Geom size={100} type="interval" position="week*views">
+      <Geom size={props.size} type={props.type} position="week*views">
         <Label textStyle={{ fill: '#fff' }} content="views" />
       </Geom>
     </Chart>
