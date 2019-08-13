@@ -1,52 +1,20 @@
 // Import React
 import React from 'react';
-
 import Chart from './components/Chart';
 import Table from './components/DataTable';
-
-import '../src/styles.css';
-import 'antd/dist/antd.css';
-
 import { Deck, Heading } from 'spectacle';
+import '../src/styles.css';
 
-// Import theme
 import createTheme from 'spectacle/lib/themes/default';
 import BaseSlide from './components/Slide';
-
 import bulb from './assets/creative.svg';
 
-import { useQuery } from '@apollo/react-hooks';
-import { TOP_ARTICLES_BY_DTI } from './queries';
+import { fecthArticlesData, fetchGoggleData } from './queries/index';
 
-import {
-  table1data,
-  table2data,
-  table1columns,
-  table2columns
-} from './data/table';
+import { DTIUnique1Day, DTIUnique7Days } from './data/table';
 
 // Require CSS
 require('normalize.css');
-
-function fecthData() {
-  const { loading, error, data } = useQuery(TOP_ARTICLES_BY_DTI, {
-    variables: {
-      activityPeriod: {
-        from: '2019-08-11T00:00:00.000Z',
-        to: '2019-08-12T00:00:00.000Z'
-      }
-    }
-  });
-
-  if (!loading) {
-    const articles = data.report.articles.edges.map(list => ({
-      headline: list.node.headline,
-      totalDwellTimeIndex: list.metrics.dwellTimeIndex.total,
-      totalReaders: list.metrics.uniqueVisitors.total
-    }));
-    console.log(articles);
-  }
-}
 
 const theme = createTheme(
   {
@@ -62,7 +30,7 @@ const theme = createTheme(
 );
 
 const Presentation = () => {
-  fecthData();
+  fetchGoggleData();
   return (
     <div>
       <Deck
@@ -77,8 +45,6 @@ const Presentation = () => {
         <BaseSlide>
           <div className="didyouknow">
             <img alt="" src={bulb} width="100px" />
-            <br />
-            <br />
             <Heading className="didyouknow" size={4}>
               Did you know?
             </Heading>
@@ -88,18 +54,27 @@ const Presentation = () => {
           </Heading>
         </BaseSlide>
         <BaseSlide>
-          <Heading size={4}>Dwell Time Index - Uniques</Heading>
-          <br />
-          <Table data={table1data} columns={table1columns} />
+          <Heading size={4}>Dwell Time Index</Heading>
+          <Heading size={6}>Top Articles in News the Past 7 Days</Heading>
+          <Table columns={DTIUnique7Days} articles={fecthArticlesData()} />
         </BaseSlide>
         <BaseSlide>
-          <Heading size={4}>Dwell Time Index - Today</Heading>
-          <br />
-          <Table data={table2data} columns={table2columns} />
+          <Heading size={4}>Dwell Time Index</Heading>
+          <Heading size={6}>Top Articles Today</Heading>
+          <Table columns={DTIUnique1Day} articles={fecthArticlesData()} />
         </BaseSlide>
         <BaseSlide>
-          <Heading size={4}>Google Web Traffic - Weekly</Heading>
-          <br />
+          <Heading size={4}>Google Traffic</Heading>
+          <Heading size={6}>
+            Weekly Unique Visirors Referred from Google
+          </Heading>
+          <Chart />
+        </BaseSlide>
+        <BaseSlide>
+          <Heading size={4}>Google Traffic</Heading>
+          <Heading size={6}>
+            Weekly Unique Visirors Referred from Google
+          </Heading>
           <Chart />
         </BaseSlide>
       </Deck>

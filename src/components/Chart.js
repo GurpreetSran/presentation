@@ -1,6 +1,6 @@
 import React from 'react';
 import { data } from '../data/chart';
-import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
+import { Chart, Geom, Axis, Tooltip, Label } from 'bizcharts';
 
 const cols = {
   views: {
@@ -41,13 +41,13 @@ const BaseChart = () => (
       <Axis
         name="week"
         label={{
-          textStyle: { fill: '#283c4f' }
+          textStyle: { fill: '#fff' }
         }}
       />
       <Axis
         name="views"
         label={{
-          textStyle: { fill: 'white' }
+          textStyle: { fill: 'white', fontSize: '24' }
         }}
       />
       <Tooltip
@@ -61,7 +61,9 @@ const BaseChart = () => (
           boxShadow: 'none'
         }}
       />
-      <Geom size={15} type="interval" position="week*views" />
+      <Geom size={100} type="interval" position="week*views">
+        <Label textStyle={{ fill: '#fff' }} content="views" />
+      </Geom>
     </Chart>
   </div>
 );

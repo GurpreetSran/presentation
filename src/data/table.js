@@ -1,47 +1,3 @@
-/*
-// Last 7 days 
-{
-            "node": {
-              "id": "98458d2e-b39f-11e9-b26a-caceaf2bf014",
-              "headline": "Richard Holbrooke and the End of the American Century by George Packer review — the man who wanted to be Kissinger",
-              uniqueVisitors": 2064
-            },
-            {
-            "node": {
-              "id": "dbd8c4ea-b95b-11e9-9ed1-57176c9fe03e",
-              "headline": "Frank Lampard puts faith in bouncy castles and an iron will at Chelsea",
-               "total": 203
-            },
-          {
-            "node": {
-              "id": "e299c2a4-b5f3-11e9-b26a-caceaf2bf014",
-              "headline": "Why Adidas and Nike will not play ball with Mike Ashley",
-              "total": 33725
-            },
-            
-          {
-            "node": {
-              "id": "64de6180-b517-11e9-b26a-caceaf2bf014",
-              "headline": "Win a break for two in Istanbul, with the five-star Ajwa Hotel Sultanahmet and Pegasus Airlines",
-                  "total": 3243
-            },
-            
-          {
-            "node": {
-              "id": "20940d96-b38b-11e9-976e-8c6a49598911",
-              "headline": "Infamy by Jerry Toner review — the gory that was Rome",
-              "total": 1933
-            },
-          }
-        ]
-      }
-    }
-  }
-}
-
-
-*/
-
 export const table1data = [
   {
     id: '98458d2e-b39f-11e9-b26a-caceaf2bf014',
@@ -72,137 +28,35 @@ export const table1data = [
   }
 ];
 
-export const table1columns = [
+export const DTIUnique7Days = [
   {
     name: 'Headline',
-    selector: 'title',
+    selector: 'headline',
     sortable: false,
-    grow: 10
+    grow: 4
   },
   {
-    name: 'Uniques',
-    selector: 'uniques',
-    sortable: true,
-    right: true,
+    name: 'Dwell Time Index',
+    selector: 'totalDwellTimeIndex',
+    grow: 1
+  },
+  {
+    name: 'Unique Readers',
+    selector: 'totalReaders',
     grow: 1
   }
 ];
 
-export const table2columns = [
+export const DTIUnique1Day = [
   {
     name: 'Headline',
-    selector: 'title',
-    sortable: false
+    selector: 'headline',
+    sortable: false,
+    grow: 4
+  },
+  {
+    name: 'Dwell Time Index',
+    selector: 'totalDwellTimeIndex',
+    grow: 1
   }
 ];
-
-export const table2data = [
-  {
-    id: 'dbd8c4ea-b95b-11e9-9ed1-57176c9fe03e',
-    title:
-      'Frank Lampard puts faith in bouncy castles and an iron will at Chelsea'
-  },
-  {
-    id: '25359260-b94f-11e9-9ed1-57176c9fe03e',
-    title: 'Muddy Waters criticises Burford Capital: the report unspun'
-  },
-  {
-    id: '2a528a58-b95b-11e9-bfc4-f5ff1f47234e',
-    title: 'Conman Mark Acklom: Kid Con and his lifetime of lying'
-  },
-  {
-    id: 'ef8211fa-b964-11e9-9ed1-57176c9fe03e',
-    title: 'Ahir Shah review — Lack of ideas allows for more fun'
-  },
-  {
-    id: 'dd76ff42-b93d-11e9-bfc4-f5ff1f47234e',
-    title: 'Ahir Shah review — Lack of ideas allows for more fun'
-  }
-];
-
-/*
-   Today
-
- 
-   {
-  "data": {
-    "report": {
-      "articles": {
-        "edges": [
-          {
-            "node": {
-              "id": "dbd8c4ea-b95b-11e9-9ed1-57176c9fe03e",
-              "headline": "Frank Lampard puts faith in bouncy castles and an iron will at Chelsea"
-            },
-            "metrics": {
-              "uniqueVisitors": {
-                "total": 203
-              },
-              "dwellTimeIndex": {
-                "total": 200
-              }
-            }
-          },
-          {
-            "node": {
-              "id": "25359260-b94f-11e9-9ed1-57176c9fe03e",
-              "headline": "Muddy Waters criticises Burford Capital: the report unspun"
-            },
-            "metrics": {
-              "uniqueVisitors": {
-                "total": 195
-              },
-              "dwellTimeIndex": {
-                "total": 177
-              }
-            }
-          },
-          {
-            "node": {
-              "id": "2a528a58-b95b-11e9-bfc4-f5ff1f47234e",
-              "headline": "Conman Mark Acklom: Kid Con and his lifetime of lying"
-            },
-            "metrics": {
-              "uniqueVisitors": {
-                "total": 606
-              },
-              "dwellTimeIndex": {
-                "total": 177
-              }
-            }
-          },
-          {
-            "node": {
-              "id": "ef8211fa-b964-11e9-9ed1-57176c9fe03e",
-              "headline": "Ahir Shah review — Lack of ideas allows for more fun"
-            },
-            "metrics": {
-              "uniqueVisitors": {
-                "total": 30
-              },
-              "dwellTimeIndex": {
-                "total": 175
-              }
-            }
-          },
-          {
-            "node": {
-              "id": "dd76ff42-b93d-11e9-bfc4-f5ff1f47234e",
-              "headline": "Will Scots ever escape world of woe?"
-            },
-            "metrics": {
-              "uniqueVisitors": {
-                "total": 11
-              },
-              "dwellTimeIndex": {
-                "total": 175
-              }
-            }
-          }
-        ]
-      }
-    }
-  }
-}
-
-*/

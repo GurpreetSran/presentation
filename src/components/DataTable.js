@@ -36,12 +36,14 @@ const darkTheme = {
   }
 };
 
-const Table = props => (
-  <DataTable
-    customTheme={darkTheme}
-    columns={props.columns}
-    data={props.data}
-  />
-);
+const Table = props => {
+  return (
+    <DataTable
+      customTheme={darkTheme}
+      columns={props.columns}
+      data={props.articles}
+    />
+  );
+};
 
 export default Table;
