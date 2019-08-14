@@ -43,8 +43,8 @@ const Presentation = () => {
     <div>
       <Deck
         controls={false}
-        autoplay={false}
-        autoplayDuration={10000}
+        autoplay={true}
+        autoplayDuration={5000}
         showFullscreenControl={true}
         transition={['zoom']}
         theme={theme}

@@ -2,23 +2,24 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import * as moment from 'moment';
 
-const dateFormat = 'YYYY-MM-DDTHH:mm:ss.SSSZ';
+const DATE_FORMAT = 'YYYY-MM-DDTHH:mm:ss.SSSZ';
+const POLLING_INTERVAL = 5000;
 
 const currentWeek = moment().startOf('isoWeek');
 const last4weeks = moment()
   .startOf('isoWeek')
   .subtract(4, 'week')
   .add(1, 'hour')
-  .format(dateFormat);
+  .format(DATE_FORMAT);
 
 const lastOneWeek = moment()
   .subtract(1, 'week')
-  .format(dateFormat);
+  .format(DATE_FORMAT);
 
-const currentDate = moment().format(dateFormat);
+const currentDate = moment().format(DATE_FORMAT);
 const startOfDay = moment()
   .startOf('day')
-  .format(dateFormat);
+  .format(DATE_FORMAT);
 
 const TOP_ARTICLES_BY_DTI = gql`
   query($activityPeriod: activityPeriodInput) {
@@ -79,7 +80,7 @@ export function fetchGoggleData() {
         to: currentWeek
       }
     },
-    pollInterval: 5000
+    pollInterval: POLLING_INTERVAL
   });
   if (loading || error) {
     return false;
@@ -100,7 +101,7 @@ export function fecthArticlesDataForToday() {
         to: currentDate
       }
     },
-    pollInterval: 5000
+    pollInterval: POLLING_INTERVAL
   });
 
   if (loading || error) {
@@ -124,7 +125,7 @@ export function fecthArticlesDataForLastWeek() {
         to: currentDate
       }
     },
-    pollInterval: 5000
+    pollInterval: POLLING_INTERVAL
   });
 
   if (loading || error) {
