@@ -1,5 +1,17 @@
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
+import * as moment from 'moment';
+
+const dateFormat = 'YYYY-MM-DDTHH:mm:ss.SSSZ';
+
+const currentWeek = moment().startOf('isoWeek');
+const last4weeks = moment()
+  .startOf('isoWeek')
+  .subtract(4, 'week')
+  .add(1, 'hour')
+  .format(dateFormat);
+
+window.ttt = moment;
 
 const TOP_ARTICLES_BY_DTI = gql`
   query($activityPeriod: activityPeriodInput) {
@@ -29,7 +41,7 @@ const GOOGLE_TRAFFIC = gql`
   query($activityPeriod: activityPeriodInput) {
     report(publication: TIMES, activityPeriod: $activityPeriod) {
       dimensions {
-        activityPeriodTimeSeries(interval: "7d") {
+        activityPeriodTimeSeries(interval: "week") {
           edges {
             node {
               id
@@ -56,10 +68,11 @@ export function fetchGoggleData() {
   const { loading, error, data } = useQuery(GOOGLE_TRAFFIC, {
     variables: {
       activityPeriod: {
-        from: '2019-07-12T00:00:00.000Z',
-        to: '2019-08-11T00:00:00.000Z'
+        from: last4weeks,
+        to: currentWeek
       }
-    }
+    },
+    pollInterval: 5000
   });
   if (loading || error) {
     return false;
@@ -79,16 +92,19 @@ export function fecthArticlesData() {
         from: '2019-08-11T00:00:00.000Z',
         to: '2019-08-12T00:00:00.000Z'
       }
-    }
+    },
+    pollInterval: 5000
   });
 
   if (loading || error) {
     return false;
   } else {
-    return data.report.articles.edges.map(list => ({
+    const articles = data.report.articles.edges.map(list => ({
       headline: list.node.headline,
       totalDwellTimeIndex: list.metrics.dwellTimeIndex.total,
       totalReaders: list.metrics.uniqueVisitors.total
     }));
+    articles.lastUpdated = data.report.lastUpdated;
+    return articles;
   }
 }

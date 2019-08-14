@@ -1,9 +1,11 @@
 import React from 'react';
-import { data } from '../data/chart';
 import { Chart, Geom, Axis, Tooltip, Label } from 'bizcharts';
+import * as moment from 'moment';
+
+const dateFormat = 'DD MMM';
 
 const cols = {
-  views: {
+  total: {
     min: 0,
 
     formatter(value) {
@@ -32,20 +34,27 @@ const cols = {
       }
       return newValue;
     }
+  },
+  date: {
+    formatter: date =>
+      `${moment(date).format(dateFormat)} to ${moment(date)
+        .add(1, 'week')
+        .subtract(1, 'day')
+        .format(dateFormat)}`
   }
 };
 
-const BaseChart = props => (
+const BaseChart = ({ data, size, type }) => (
   <div>
     <Chart animate={false} data={data} scale={cols} width={1800} forceFit>
       <Axis
-        name="week"
+        name="date"
         label={{
           textStyle: { fill: '#fff' }
         }}
       />
       <Axis
-        name="views"
+        name="total"
         label={{
           textStyle: { fill: 'white', fontSize: '24' }
         }}
@@ -61,8 +70,8 @@ const BaseChart = props => (
           boxShadow: 'none'
         }}
       />
-      <Geom size={props.size} type={props.type} position="week*views">
-        <Label textStyle={{ fill: '#fff' }} content="views" />
+      <Geom size={size} type={type} position="date*total">
+        <Label textStyle={{ fill: '#fff' }} content="total" />
       </Geom>
     </Chart>
   </div>

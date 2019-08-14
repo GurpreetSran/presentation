@@ -30,7 +30,10 @@ const theme = createTheme(
 );
 
 const Presentation = () => {
-  fetchGoggleData();
+  const chartData = fetchGoggleData();
+  const articlesData = fecthArticlesData();
+  const lastUpdatedDate = articlesData.lastUpdated;
+
   return (
     <div>
       <Deck
@@ -42,7 +45,7 @@ const Presentation = () => {
         theme={theme}
         contentWidth="90%"
       >
-        <BaseSlide>
+        <BaseSlide lastUpdatedDate={lastUpdatedDate}>
           <div className="didyouknow">
             <img alt="" src={bulb} width="100px" />
             <Heading className="didyouknow" size={4}>
@@ -53,29 +56,29 @@ const Presentation = () => {
             We now have over 300,000 digital only subscribers.
           </Heading>
         </BaseSlide>
-        <BaseSlide>
+        <BaseSlide lastUpdatedDate={lastUpdatedDate}>
           <Heading size={4}>Dwell Time Index</Heading>
           <Heading size={6}>Top Articles in News the Past 7 Days</Heading>
-          <Table columns={DTIUnique7Days} articles={fecthArticlesData()} />
+          <Table columns={DTIUnique7Days} data={articlesData} />
         </BaseSlide>
-        <BaseSlide>
+        <BaseSlide lastUpdatedDate={lastUpdatedDate}>
           <Heading size={4}>Dwell Time Index</Heading>
           <Heading size={6}>Top Articles Today</Heading>
-          <Table columns={DTIUnique1Day} articles={fecthArticlesData()} />
+          <Table columns={DTIUnique1Day} data={articlesData} />
         </BaseSlide>
-        <BaseSlide>
+        <BaseSlide lastUpdatedDate={lastUpdatedDate}>
           <Heading size={4}>Google Traffic</Heading>
           <Heading size={6}>
             Weekly Unique Visirors Referred from Google
           </Heading>
-          <Chart size={100} type="interval" />
+          <Chart data={chartData} size={100} type="interval" />
         </BaseSlide>
-        <BaseSlide>
+        <BaseSlide lastUpdatedDate={lastUpdatedDate}>
           <Heading size={4}>Google Traffic</Heading>
           <Heading size={6}>
             Weekly Unique Visitors Referred from Google
           </Heading>
-          <Chart size={5} type="line" />
+          <Chart data={chartData} size={5} type="line" />
         </BaseSlide>
       </Deck>
     </div>

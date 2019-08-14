@@ -33,7 +33,9 @@ if (module.hot) {
     const NextPresentation = require('./presentation').default;
     ReactDOM.render(
       <AppContainer errorReporter={CustomErrorReporter}>
-        <NextPresentation />
+        <ApolloProvider client={client}>
+          <NextPresentation />
+        </ApolloProvider>
       </AppContainer>,
       document.getElementById('root')
     );

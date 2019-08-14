@@ -3,12 +3,12 @@ import { Slide } from 'spectacle';
 import Header from './Header';
 import Footer from './Footer';
 
-const BaseSlide = props => (
+const BaseSlide = ({ lastUpdatedDate, children }) => (
   <Slide transition={['zoom']} bgColor="primary">
     <Header />
-    {props.children}
+    {children}
     <br />
-    <Footer />
+    <Footer lastUpdatedDate={lastUpdatedDate} />
   </Slide>
 );
 
