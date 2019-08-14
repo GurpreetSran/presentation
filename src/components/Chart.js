@@ -2,7 +2,7 @@ import React from 'react';
 import { Chart, Geom, Axis, Tooltip, Label } from 'bizcharts';
 import * as moment from 'moment';
 
-const dateFormat = 'DD MMM';
+const dateFormat = 'Do MMM';
 
 const cols = {
   total: {
