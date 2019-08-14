@@ -9,7 +9,11 @@ import createTheme from 'spectacle/lib/themes/default';
 import BaseSlide from './components/Slide';
 import bulb from './assets/creative.svg';
 
-import { fecthArticlesData, fetchGoggleData } from './queries/index';
+import {
+  fecthArticlesDataForLastWeek,
+  fecthArticlesDataForToday,
+  fetchGoggleData
+} from './queries/index';
 
 import { DTIUnique1Day, DTIUnique7Days } from './data/table';
 
@@ -31,7 +35,8 @@ const theme = createTheme(
 
 const Presentation = () => {
   const chartData = fetchGoggleData();
-  const articlesData = fecthArticlesData();
+  const articlesData = fecthArticlesDataForToday();
+  const lastWeekArticles = fecthArticlesDataForLastWeek();
   const lastUpdatedDate = articlesData.lastUpdated;
 
   return (
@@ -59,7 +64,7 @@ const Presentation = () => {
         <BaseSlide lastUpdatedDate={lastUpdatedDate}>
           <Heading size={4}>Dwell Time Index</Heading>
           <Heading size={6}>Top Articles in News the Past 7 Days</Heading>
-          <Table columns={DTIUnique7Days} data={articlesData} />
+          <Table columns={DTIUnique7Days} data={lastWeekArticles} />
         </BaseSlide>
         <BaseSlide lastUpdatedDate={lastUpdatedDate}>
           <Heading size={4}>Dwell Time Index</Heading>

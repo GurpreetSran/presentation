@@ -3,7 +3,7 @@ import * as moment from 'moment';
 
 const Footer = ({ lastUpdatedDate }) => {
   if (!lastUpdatedDate) {
-    return 'null';
+    return null;
   }
   const time = moment(lastUpdatedDate).format('HH:mm');
   return (

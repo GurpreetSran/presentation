@@ -11,7 +11,14 @@ const last4weeks = moment()
   .add(1, 'hour')
   .format(dateFormat);
 
-window.ttt = moment;
+const lastOneWeek = moment()
+  .subtract(1, 'week')
+  .format(dateFormat);
+
+const currentDate = moment().format(dateFormat);
+const startOfDay = moment()
+  .startOf('day')
+  .format(dateFormat);
 
 const TOP_ARTICLES_BY_DTI = gql`
   query($activityPeriod: activityPeriodInput) {
@@ -85,12 +92,12 @@ export function fetchGoggleData() {
   }
 }
 
-export function fecthArticlesData() {
+export function fecthArticlesDataForToday() {
   const { loading, error, data } = useQuery(TOP_ARTICLES_BY_DTI, {
     variables: {
       activityPeriod: {
-        from: '2019-08-11T00:00:00.000Z',
-        to: '2019-08-12T00:00:00.000Z'
+        from: startOfDay,
+        to: currentDate
       }
     },
     pollInterval: 5000
@@ -106,5 +113,27 @@ export function fecthArticlesData() {
     }));
     articles.lastUpdated = data.report.lastUpdated;
     return articles;
+  }
+}
+
+export function fecthArticlesDataForLastWeek() {
+  const { loading, error, data } = useQuery(TOP_ARTICLES_BY_DTI, {
+    variables: {
+      activityPeriod: {
+        from: lastOneWeek,
+        to: currentDate
+      }
+    },
+    pollInterval: 5000
+  });
+
+  if (loading || error) {
+    return false;
+  } else {
+    return data.report.articles.edges.map(list => ({
+      headline: list.node.headline,
+      totalDwellTimeIndex: list.metrics.dwellTimeIndex.total,
+      totalReaders: list.metrics.uniqueVisitors.total
+    }));
   }
 }
