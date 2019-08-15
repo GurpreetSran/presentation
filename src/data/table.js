@@ -8,12 +8,14 @@ export const DTIUnique7Days = [
   {
     name: 'Dwell Time Index',
     selector: 'totalDwellTimeIndex',
-    grow: 1
+    grow: 1,
+    right: true
   },
   {
     name: 'Unique Readers',
     selector: 'totalReaders',
-    grow: 1
+    grow: 1,
+    right: true
   }
 ];
 
@@ -27,6 +29,7 @@ export const DTIUnique1Day = [
   {
     name: 'Dwell Time Index',
     selector: 'totalDwellTimeIndex',
-    grow: 1
+    grow: 1,
+    right: true
   }
 ];

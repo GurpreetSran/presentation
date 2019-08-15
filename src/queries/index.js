@@ -134,7 +134,10 @@ export function fecthArticlesDataForLastWeek() {
     return data.report.articles.edges.map(list => ({
       headline: list.node.headline,
       totalDwellTimeIndex: list.metrics.dwellTimeIndex.total,
-      totalReaders: list.metrics.uniqueVisitors.total
+      totalReaders: parseInt(
+        list.metrics.uniqueVisitors.total,
+        10
+      ).toLocaleString()
     }));
   }
 }

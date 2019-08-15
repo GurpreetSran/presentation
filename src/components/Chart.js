@@ -37,7 +37,7 @@ const cols = {
   },
   date: {
     formatter: date =>
-      `${moment(date).format(dateFormat)} to ${moment(date)
+      `${moment(date).format(dateFormat)} - ${moment(date)
         .add(1, 'week')
         .subtract(1, 'day')
         .format(dateFormat)}`
@@ -46,11 +46,11 @@ const cols = {
 
 const BaseChart = ({ data, size, type }) => (
   <div>
-    <Chart animate={false} data={data} scale={cols} width={1800} forceFit>
+    <Chart animate={false} data={data} scale={cols} width={1700} forceFit>
       <Axis
         name="date"
         label={{
-          textStyle: { fill: '#fff' }
+          textStyle: { fill: '#fff', fontSize: '18' }
         }}
       />
       <Axis
@@ -71,7 +71,7 @@ const BaseChart = ({ data, size, type }) => (
         }}
       />
       <Geom size={size} type={type} position="date*total">
-        <Label textStyle={{ fill: '#fff' }} content="total" />
+        <Label textStyle={{ fill: '#fff', fontSize: '24' }} content="total" />
       </Geom>
     </Chart>
   </div>

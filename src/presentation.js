@@ -84,7 +84,7 @@ const Presentation = () => {
             Google Traffic
           </Heading>
           <Heading bold={false} size={6}>
-            Weekly Unique Visirors Referred from Google
+            Weekly Unique Visitors Referred from Google
           </Heading>
           <Chart data={chartData} size={100} type="interval" />
         </BaseSlide>
