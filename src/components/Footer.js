@@ -7,8 +7,10 @@ const Footer = ({ lastUpdatedDate }) => {
   }
   const time = moment(lastUpdatedDate).format('HH:mm');
   return (
-    <div>
-      Last updated {moment(lastUpdatedDate).format('dddd Do MMMM')} at {time}
+    <div className="footer">
+      Source: Digital Subscriptions report from News Insights | Last updated:{' '}
+      {moment(lastUpdatedDate).format('dddd Do MMMM')} at {time} | For more info
+      visit news.co.uk/inca
     </div>
   );
 };

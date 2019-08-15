@@ -43,7 +43,7 @@ const Presentation = () => {
     <div>
       <Deck
         controls={false}
-        autoplay={true}
+        autoplay={false}
         autoplayDuration={5000}
         showFullscreenControl={true}
         transition={['zoom']}
@@ -53,34 +53,46 @@ const Presentation = () => {
         <BaseSlide lastUpdatedDate={lastUpdatedDate}>
           <div className="didyouknow">
             <img alt="" src={bulb} width="100px" />
-            <Heading className="didyouknow" size={4}>
+            <Heading bold={false} className="didyouknow" size={4}>
               Did you know?
             </Heading>
           </div>
-          <Heading size={3}>
+          <Heading bold={false} size={3}>
             We now have over 300,000 digital only subscribers.
           </Heading>
         </BaseSlide>
         <BaseSlide lastUpdatedDate={lastUpdatedDate}>
-          <Heading size={4}>Dwell Time Index</Heading>
-          <Heading size={6}>Top Articles in News the Past 7 Days</Heading>
+          <Heading bold={false} size={4}>
+            Dwell Time Index
+          </Heading>
+          <Heading bold={false} size={6}>
+            Top Articles in News the Past 7 Days
+          </Heading>
           <Table columns={DTIUnique7Days} data={lastWeekArticles} />
         </BaseSlide>
         <BaseSlide lastUpdatedDate={lastUpdatedDate}>
-          <Heading size={4}>Dwell Time Index</Heading>
-          <Heading size={6}>Top Articles Today</Heading>
+          <Heading bold={false} size={4}>
+            Dwell Time Index
+          </Heading>
+          <Heading bold={false} size={6}>
+            Top Articles Today
+          </Heading>
           <Table columns={DTIUnique1Day} data={articlesData} />
         </BaseSlide>
         <BaseSlide lastUpdatedDate={lastUpdatedDate}>
-          <Heading size={4}>Google Traffic</Heading>
-          <Heading size={6}>
+          <Heading bold={false} size={4}>
+            Google Traffic
+          </Heading>
+          <Heading bold={false} size={6}>
             Weekly Unique Visirors Referred from Google
           </Heading>
           <Chart data={chartData} size={100} type="interval" />
         </BaseSlide>
         <BaseSlide lastUpdatedDate={lastUpdatedDate}>
-          <Heading size={4}>Google Traffic</Heading>
-          <Heading size={6}>
+          <Heading bold={false} size={4}>
+            Google Traffic
+          </Heading>
+          <Heading bold={false} size={6}>
             Weekly Unique Visitors Referred from Google
           </Heading>
           <Chart data={chartData} size={5} type="line" />
