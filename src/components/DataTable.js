@@ -37,7 +37,22 @@ const darkTheme = {
 };
 
 const Table = ({ data, columns }) => {
-  return <DataTable customTheme={darkTheme} columns={columns} data={data} />;
+  if (!data) {
+    return 'Loading ...';
+  }
+  const addRowNumbers = data.map((row, index) => {
+    row.index = index + 1;
+    return row;
+  });
+
+  return (
+    <DataTable
+      className="dataTable"
+      customTheme={darkTheme}
+      columns={columns}
+      data={addRowNumbers}
+    />
+  );
 };
 
 export default Table;

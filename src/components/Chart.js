@@ -55,6 +55,7 @@ const BaseChart = ({ data, size, type }) => (
       />
       <Axis
         name="total"
+        grid={false}
         label={{
           textStyle: { fill: 'white', fontSize: '24' }
         }}

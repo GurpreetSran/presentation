@@ -43,8 +43,8 @@ const Presentation = () => {
     <div>
       <Deck
         controls={false}
-        autoplay={false}
-        autoplayDuration={5000}
+        autoplay={true}
+        autoplayDuration={10000}
         showFullscreenControl={true}
         transition={['zoom']}
         theme={theme}
@@ -57,7 +57,7 @@ const Presentation = () => {
               Did you know?
             </Heading>
           </div>
-          <Heading bold={false} size={3}>
+          <Heading className="slide1Header" bold={false} size={3}>
             We now have over 300,000 digital only subscribers.
           </Heading>
         </BaseSlide>
@@ -86,7 +86,7 @@ const Presentation = () => {
           <Heading bold={false} size={6}>
             Weekly Unique Visitors Referred from Google
           </Heading>
-          <Chart data={chartData} size={100} type="interval" />
+          <Chart data={chartData} size={200} type="interval" />
         </BaseSlide>
         <BaseSlide lastUpdatedDate={lastUpdatedDate}>
           <Heading bold={false} size={4}>
@@ -95,7 +95,7 @@ const Presentation = () => {
           <Heading bold={false} size={6}>
             Weekly Unique Visitors Referred from Google
           </Heading>
-          <Chart data={chartData} size={5} type="line" />
+          <Chart data={chartData} size={10} type="line" />
         </BaseSlide>
       </Deck>
     </div>

@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/react-hooks';
 import * as moment from 'moment';
 
 const DATE_FORMAT = 'YYYY-MM-DDTHH:mm:ss.SSSZ';
-const POLLING_INTERVAL = 5000;
+const POLLING_INTERVAL = 600000; // 10 mins
 
 const currentWeek = moment().startOf('isoWeek');
 const last4weeks = moment()
