@@ -48,7 +48,7 @@ const Presentation = () => {
         showFullscreenControl={true}
         transition={['zoom']}
         theme={theme}
-        contentWidth="90%"
+        contentWidth="95%"
       >
         <BaseSlide lastUpdatedDate={lastUpdatedDate}>
           <div className="didyouknow">

@@ -46,7 +46,7 @@ const cols = {
 
 const BaseChart = ({ data, size, type }) => (
   <div>
-    <Chart animate={false} data={data} scale={cols} width={1700} forceFit>
+    <Chart animate={false} data={data} scale={cols} width={1400} forceFit>
       <Axis
         name="date"
         label={{

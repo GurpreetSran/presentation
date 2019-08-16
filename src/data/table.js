@@ -3,25 +3,25 @@ export const DTIUnique7Days = [
     name: 'Headline',
     selector: 'index',
     sortable: false,
-    grow: 0.1
+    maxWidth: '10px'
   },
   {
     name: '',
     selector: 'headline',
     sortable: false,
-    grow: 4
+    maxWidth: '900px'
   },
   {
     name: 'Dwell Time Index',
     selector: 'totalDwellTimeIndex',
-    grow: 0.8,
-    right: true
+    right: true,
+    maxWidth: '170px'
   },
   {
     name: 'Unique Readers',
     selector: 'totalReaders',
-    grow: 0.8,
-    right: true
+    right: true,
+    maxWidth: '170px'
   }
 ];
 
